@@ -50,7 +50,7 @@ int main(){
     }
     for(j=sum/2;j>=0;j--){
         if(dp[n][j]==true){
-            mini=sum-2*j;
+            mini=sum-2*j;  //getting the subset haviing sum <=sum/2 
             break;
         }
     }
