@@ -33,6 +33,7 @@ int main(){
     }
     cout<<"The count of subsets with minimum difference is "<<dp[n][sum1];
     return 0;
+}
     /* ex:4
           3 1 2 3
           possibel sets
@@ -42,4 +43,16 @@ int main(){
           1 2 3            3          3
           so if we can find the no of subsets s1=(diff+s)/2 we can find that no of ways
     */
-}
+    /* it is also same as the target sum where you are given the array and you have find the no of ways that you  can make an array by adding + and -
+    ex:  [1,1,1,1,1]
+        target sum=3;
+        so you can make it like [-1,1,1,1,1]
+                                [1,-1,1,1,1]
+                                [-1,1,-1,1,1]
+                                [-1,1,1,-1,1]
+                                [-1,1,1,1,-1]
+         so the approach is if we can make two subsets s1 (positive values) and s2 (negative values)
+            => s1-s2=diff and s1+s2=s
+            => s1=(diff+s)/2 so if you can count the no of subsets of sum s1 then you get the count 
+            which is a type of counting the subset of given sum
+    */
