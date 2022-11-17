@@ -50,7 +50,7 @@ int main(){
     }
     for(j=sum/2;j>=0;j--){
         if(dp[n][j]==true){
-            mini=sum-2*j;  //getting the subset haviing sum <=sum/2 
+            mini=sum-2*j;  //  here we are getting the subset whose value is as close as the half sum such that we get minimum difference
             break;
         }
     }
