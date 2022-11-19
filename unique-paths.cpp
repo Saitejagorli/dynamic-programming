@@ -18,26 +18,26 @@ int main(){
 /*time complexity is O(2^n) and space complexity is O(n)*/
 /*--------------------------------------------------------------------*/
 /*dynamic programming memoization*/
-// #include<iostream>
-// #include<vector>
-// using namespace std;
-// int  unique_paths(int m,int n,vector<vector<int>>&dp){
-//     if(m==1 || n==1)
-//         return 1;
-//     if(dp[m][n]!=-1)
-//         return dp[m][n];
-//     else
-//         return dp[m][n]=unique_paths(m-1,n,dp)+unique_paths(m,n-1,dp);
-//         //here we are going either top or left as it is top down approach
-// }
-// int main(){
-//     int m,n;
-//     cout<<"Enter the dimensions of the grid:";
-//     cin>>m>>n;
-//     vector<vector<int>>dp(m+1,vector<int>(n+1,-1));
-//     cout<<"The unique paths from the (0,0) to (m-1,n-1) is "<<unique_paths( m, n,dp);
-//     return 0;
-// }
+#include<iostream>
+#include<vector>
+using namespace std;
+int  unique_paths(int m,int n,vector<vector<int>>&dp){
+    if(m==1 || n==1)
+        return 1;
+    if(dp[m][n]!=-1)
+        return dp[m][n];
+    else
+        return dp[m][n]=unique_paths(m-1,n,dp)+unique_paths(m,n-1,dp);
+        //here we are going either top or left as it is top down approach
+}
+int main(){
+    int m,n;
+    cout<<"Enter the dimensions of the grid:";
+    cin>>m>>n;
+    vector<vector<int>>dp(m+1,vector<int>(n+1,-1));
+    cout<<"The unique paths from the (0,0) to (m-1,n-1) is "<<unique_paths( m, n,dp);
+    return 0;
+}
 /*time and space complexity is O(m*n)*/
 /*---------------------------------------------------------------*/
 /*dynamic programming tabulation method*/
