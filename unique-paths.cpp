@@ -50,7 +50,7 @@ int main(){
     cin>>m>>n;
     int dp[m][n];
     for(i=0;i<m;i++)
-        dp[i][0]=1;
+        dp[i][0]=1;   //count of paths to reach each cell in any row or column is 1
     for(j=0;j<n;j++)
         dp[0][j]=1;
     for(i=1;i<m;i++){
