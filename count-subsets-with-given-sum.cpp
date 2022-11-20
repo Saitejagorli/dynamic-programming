@@ -40,7 +40,7 @@ int main(){
     cout<<"Enter the sum:";
     cin>>sum;
     int dp[n+1][sum+1];
-    dp[0][0]=1;
+    dp[0][0]=1;   //if it contains 0 elements also we make it only 1 otherwise we fill the first column with 1 as we never found sum=0 except empty set
     for(j=1;j<=sum;j++)
         dp[0][j]=0;
     for(i=1;i<=n;i++){
