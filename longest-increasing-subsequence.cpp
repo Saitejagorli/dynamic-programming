@@ -18,3 +18,5 @@ int main(){
     }
     cout<<"Longest increasing subsequence is of length "<<*max_element(lis.begin(),lis.end());
 }
+/* another variant for this approach is to find the longest bitconic sequence where you have to find the lcs ans longest decreasing subsequence and add and 
+find the max by lcs +lds-1 */
