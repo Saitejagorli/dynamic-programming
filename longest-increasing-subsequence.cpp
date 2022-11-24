@@ -20,3 +20,29 @@ int main(){
 }
 /* another variant for this approach is to find the longest bitconic sequence where you have to find the lcs ans longest decreasing subsequence and add and 
 find the max by lcs +lds-1 */
+	int LongestBitonicSequence(vector<int>nums)
+	{
+	    // code here
+	    int i,j,n,max=INT_MIN;
+	    n=nums.size();
+	    vector<int>lis(n,1);
+	    for(i=1;i<n;i++){
+	        for(j=0;j<i;j++){
+	            if(nums[i]>nums[j] && lis[i]<=lis[j])
+	                lis[i]=1+lis[j];
+	        }
+	        
+	    }
+	    vector<int>lds(n,1);
+	    for(i=n-2;i>=0;i--){
+	        for(j=n-1;j>i;j--){
+	            if(nums[i]>nums[j] && lds[i]<=lds[j])
+	                lds[i]=1+lds[j];
+	        }
+	    }
+	    for(i=0;i<n;i++){
+	        if(lis[i]+lds[i]-1 > max)
+	            max=lis[i]+lds[i]-1;
+	    }
+	    return max;
+	 }
